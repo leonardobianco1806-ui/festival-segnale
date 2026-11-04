@@ -151,6 +151,171 @@ h3 {
   margin-bottom: 0.5rem;
 }
 
+.luoghi-swiper {
+  max-width: 100%;
+  overflow: hidden;
+  border: 1px solid #b7c0b7;
+  border-radius: 0.75rem;
+  background: #ffffff;
+}
+
+.venue-slide {
+  margin: 0;
+}
+
+.venue-slide img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.venue-slide figcaption {
+  padding: 1rem 1.25rem;
+}
+
+.venue-slide h3 {
+  margin-top: 0;
+}
+
+.venue-slide p {
+  margin-bottom: 0;
+}
+
+.swiper-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.swiper-controls .swiper-button-prev,
+.swiper-controls .swiper-button-next {
+  position: static;
+  width: auto;
+  height: auto;
+  min-height: 2.75rem;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--colore-primario);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.swiper-controls .swiper-button-prev:hover,
+.swiper-controls .swiper-button-next:hover {
+  background: var(--colore-primario-scuro);
+}
+
+.swiper-controls .swiper-button-prev:focus-visible,
+.swiper-controls .swiper-button-next:focus-visible {
+  outline: 3px solid var(--colore-testo);
+  outline-offset: 3px;
+}
+
+.swiper-controls .swiper-button-prev::after {
+  content: "Precedente";
+}
+
+.swiper-controls .swiper-button-next::after {
+  content: "Successiva";
+}
+
+.swiper-controls .swiper-button-disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.map-preview {
+  position: relative;
+  display: flex;
+  aspect-ratio: 16 / 9;
+  align-items: flex-end;
+  overflow: hidden;
+  border: 1px solid #b7c0b7;
+  border-radius: 0.75rem;
+  background-color: #e5ecd9;
+  background-image:
+    linear-gradient(32deg, transparent 46%, #ffffff 47%, #ffffff 50%, transparent 51%),
+    linear-gradient(145deg, transparent 38%, #ffffff 39%, #ffffff 42%, transparent 43%),
+    linear-gradient(82deg, transparent 62%, #c7d8c1 63%, #c7d8c1 72%, transparent 73%),
+    linear-gradient(15deg, transparent 72%, #d2dfc8 73%, #d2dfc8 82%, transparent 83%);
+  color: var(--colore-testo);
+  text-decoration: none;
+}
+
+.map-preview:hover {
+  text-decoration: none;
+}
+
+.map-preview:focus-visible {
+  outline: 3px solid var(--colore-testo);
+  outline-offset: 3px;
+}
+
+.map-preview-markers {
+  position: absolute;
+  inset: 0;
+}
+
+.map-marker {
+  position: absolute;
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  background: var(--colore-primario);
+  box-shadow: 0 1px 4px #20292380;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.marker-one {
+  top: 24%;
+  left: 28%;
+}
+
+.marker-two {
+  top: 39%;
+  left: 61%;
+}
+
+.marker-three {
+  top: 18%;
+  left: 76%;
+}
+
+.map-preview-copy {
+  z-index: 1;
+  display: grid;
+  width: 100%;
+  gap: 0.25rem;
+  padding: 1rem 1.25rem;
+  background: #ffffff;
+}
+
+.map-preview-copy strong {
+  font-family: var(--font-titoli);
+  font-size: 1.25rem;
+}
+
+.map-preview-copy > span {
+  color: var(--colore-primario);
+  font-weight: bold;
+}
+
+.venue-list {
+  padding-left: 1.25rem;
+}
+
+.venue-list li {
+  margin-bottom: 0.75rem;
+}
+
 /* Disposizione di base: una colonna. */
 .event-grid {
   display: grid;
@@ -212,5 +377,11 @@ h3 {
 @media (min-width: 1024px) {
   .event-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .map-preview {
+    padding-inline: 2rem;
   }
 }
